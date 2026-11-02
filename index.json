@@ -1,0 +1,11 @@
+{
+  "org": "shibukawa",
+  "repo": "imagesize_py",
+  "versions": [
+    {
+      "commit": "cf87fc06d599c71b61564eca97873b7bc75ab49a",
+      "tag": "2.0.1",
+      "parsed_at": "2026-11-02T18:51:13.239846+00:00"
+    }
+  ]
+}

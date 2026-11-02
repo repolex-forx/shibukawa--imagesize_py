@@ -1,1 +1,116 @@
-Initializing
+# Repolex Knowledge Graph of shibukawa/imagesize_py
+
+RDF knowledge graph data for [shibukawa/imagesize_py](https://github.com/shibukawa/imagesize_py), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download shibukawa/imagesize_py
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── cf87fc06d599c71b61564eca97873b7bc75ab49a
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── cf87fc06d599c71b61564eca97873b7bc75ab49a
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 00851f3ba05cec169f409fceb4d580ec22b6cd43.nq.gz
+│   ├── 0c2b14940bd46618d70b47beff020a466f390fc8.nq.gz
+│   ├── 1e55133e425d32bd406d381f7766a4172a186946.nq.gz
+│   ├── 28d4b394ed156f06d04bb84f0342a7f293002b29.nq.gz
+│   ├── 2c6296df65e65afde0f1725e51ed5b6223d2be85.nq.gz
+│   ├── 2e307675701bc58363df2d0a96bf732c0fb8b229.nq.gz
+│   ├── 2f890d901f6a402847dbdb0412ac5ab51d8872dc.nq.gz
+│   ├── 385ed9a0cbb3a25946af26e4a38b51db3497e4a9.nq.gz
+│   ├── 3b6b34c6572501b14a313064084c0194f8043104.nq.gz
+│   ├── 4a2e17548b2fa69ee53c568803337239b2832f9c.nq.gz
+│   ├── 53e9348a5cd60005351e89a94db796f6b1e00680.nq.gz
+│   ├── 56eddf76589f36da360dec941a3dd4025573c57d.nq.gz
+│   ├── 58a2394f089f6eb0cd1b667e5d083e8e637e8f06.nq.gz
+│   ├── 58d528d6f24a1df30142d322250df7ab08c613ef.nq.gz
+│   ├── 5c58432010137bf9271fe6658e4a1cbdb8b71988.nq.gz
+│   ├── 69cc2adce57a5700b143a18ad999134425b21b91.nq.gz
+│   ├── 6af8acefc191a94cdee7b24b5e9f7e51850f3375.nq.gz
+│   ├── 7eee08d41515454a89a14de1c95c29ad0dda44a6.nq.gz
+│   ├── 86df9d5f29c02e2883d30066c16a1ec7d65659ea.nq.gz
+│   ├── 90add3171bcf5b352b692d8717ae0c50934c62be.nq.gz
+│   ├── 9eb44371e80795affea39f0b51e3f8858cc939a0.nq.gz
+│   ├── 9ee54b4d7ce8d34d4ed79726393d6b4a19964821.nq.gz
+│   ├── a51c79af301f72001048087a5751b146b765bc37.nq.gz
+│   ├── a98855ad2a021876d81679e2358c08778dbcb922.nq.gz
+│   ├── ae7db7dc6d6afee1052e1ec19241f35d21755a6f.nq.gz
+│   ├── af0fc5dee5c79ed302f8874a7f1f7022a9133817.nq.gz
+│   ├── b03ec00982e0d1877a5360402cf62755a60e43cc.nq.gz
+│   ├── b3dbbeb69155eeb19e27f6ff0e54c38f91a5d52d.nq.gz
+│   ├── b621a05759266e95a9b35cf7ba9ccf145bc63e63.nq.gz
+│   ├── be7beae2c2c17097320e500dcde47d440938f982.nq.gz
+│   ├── c068dff49e4a4d3d800ea1bafc57d0a0e4dd303b.nq.gz
+│   ├── cd4a46c386ed3a7423eda49af1318e1ce537d862.nq.gz
+│   ├── d0e0ed16f50bcf584bb8619d2adaae3823697601.nq.gz
+│   ├── d32230ea1df9d5c8f6c14e118d9c50f84efec8d0.nq.gz
+│   ├── d3a80b3f8884e002c611370b9bf694fb4f5724fb.nq.gz
+│   ├── e3fe59da9606274c3002fe3f732422e891fa3938.nq.gz
+│   └── e69de29bb2d1d6434b8b29ae775ad8c2e48c5391.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── cf87fc06d599c71b61564eca97873b7bc75ab49a.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+13 directories, 45 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[shibukawa/imagesize_py](https://github.com/shibukawa/imagesize_py)
+
+---
+*Parsed on 2026-11-02 by [repolex](https://repolex.ai)*
